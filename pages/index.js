@@ -4,8 +4,6 @@ import Header from '../components/Header';
 import HeadPage from '../components/HeadPage';
 import Modal from '../components/Modal';
 
-document.getElementsByTagName('body')[0].backgroundColor = "rgb(249 250 251)";
-
 export default function Home() {
 
   return (

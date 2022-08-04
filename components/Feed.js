@@ -13,7 +13,7 @@ const Feed = () => {
         xl:grid-cols-3 xl:max-w-6xl mx-auto ${!session && "!grid-cols-1 !max-w-xl"}`}>
             <section className="col-span-2">
                 <Stories />
-               { session &&<Posts /> }
+               { session && <Posts /> }
             </section>
 
             {session && <section className="hidden lg:block md:col-span-1 mt-12 ml-7">

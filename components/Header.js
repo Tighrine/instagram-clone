@@ -10,10 +10,10 @@ import {
     HeartIcon,
     PaperAirplaneIcon,
     MenuIcon,
-
+    HomeIcon
 } from "@heroicons/react/outline";
 
-import { HomeIcon } from "@heroicons/react/solid";
+import { HomeIcon as HomeIconFilled } from "@heroicons/react/solid";
 import "../styles/Header.module.css";
 
 
@@ -72,22 +72,23 @@ const Header = () => {
                     {session ? (
                         <>
                             <div className="relative navBtn">
-                                <PaperAirplaneIcon className="navBtn rotate-45" />
+                                <PaperAirplaneIcon 
+                                    onClick={() => router.push('inbox')} className="navBtn rotate-45" />
                                 <div className="absolute 
-                            -top-2 
-                            -right-1  
-                            w-5
-                            h-5 
-                            bg-red-500 
-                            rounded-full 
-                            text-white
-                            flex
-                            justify-center
-                            items-center
-                            animate-pulse
-                            text-xs
-                            font-semibold
-                            "
+                                                -top-2 
+                                                -right-1  
+                                                w-5
+                                                h-5 
+                                                bg-red-500 
+                                                rounded-full 
+                                                text-white
+                                                flex
+                                                justify-center
+                                                items-center
+                                                animate-pulse
+                                                text-xs
+                                                font-semibold
+                                            "
                                 >3</div>
                             </div>
                             <PlusCircleIcon onClick={() => setOpen(true)} className="navBtn" />

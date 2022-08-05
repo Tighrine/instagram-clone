@@ -14,7 +14,6 @@ import {
 } from "@heroicons/react/outline";
 
 import { HomeIcon as HomeIconFilled } from "@heroicons/react/solid";
-import "../styles/Header.module.css";
 
 
 const Header = () => {

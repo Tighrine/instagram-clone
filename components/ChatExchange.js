@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSession } from "next-auth/react";
 import { useRecoilValue } from "recoil";
 import { messagesList } from "../atoms/SelectedChatState";
@@ -6,17 +6,16 @@ import { messagesList } from "../atoms/SelectedChatState";
 
 const ChatExchange = ({ img, username }) => {
 
-    const [message, setMessage] = useState(null);
     const [messages, setMessages] = useState([]);
     const { data: session } = useSession();
     const listMessages = useRecoilValue(messagesList);
+    const scrollRef = useRef(null);
 
-    const sendMessage = () => {
-        setMessages(...messages, {
-            message,
-            username: session.user.username
-        });
-    }
+    useEffect(() => {
+      setMessages(listMessages);
+      scrollRef?.current?.scrollIntoView();
+    }, [listMessages, scrollRef])
+    
 
 
     return (
@@ -34,6 +33,7 @@ const ChatExchange = ({ img, username }) => {
                     )
                 })
             }
+            <div ref={scrollRef} />
         </div>
     );
 }

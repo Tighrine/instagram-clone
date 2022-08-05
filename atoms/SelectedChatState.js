@@ -7,5 +7,5 @@ export const selectedChatState = atom({
 
 export const messagesList = atom({
     key: 'messagesList',
-    default: {}
+    default: []
 });

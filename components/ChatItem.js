@@ -15,14 +15,14 @@ const ChatItem = ({ id, avatar, username, lastMsg, selected, setChats, chats }) 
         chatList = chatList.map((chat, i) =>{ 
             if(i != id) {
                 chat.selected = false;
+            } else {
+                chat.selected = true;
             }
             return chat;
         });
-        let chat = chats[id];
-        chat.selected = true;
-        chatList[id] = chat;
+
         setChats(chatList);
-        setSelectedChat(chat);
+        setSelectedChat(chatList[id]);
 
         const fakeMessages = [...Array(20)].map((_, i) => {
             let name = faker.name.firstName();
